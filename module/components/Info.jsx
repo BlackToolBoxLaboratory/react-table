@@ -13,7 +13,7 @@ const Info = () => {
       {
         env.bodyData.map((entry, index) => {
           return (
-            <InfoBlock dataObj={entry} key={index}/>
+            <InfoBlock className={`table-${index}`} dataObj={entry} key={index}/>
           );
         })
       }

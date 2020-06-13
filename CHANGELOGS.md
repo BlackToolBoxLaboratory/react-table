@@ -1,3 +1,9 @@
+## v1.0.1
+
+> Jun, 13, 2020
+
+- **Issue**: Add className of info table for customized style.
+
 ## v1.0.0
 
 > Jun, 13, 2020

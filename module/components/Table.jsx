@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import List from './List.jsx';
 import Info from './Info.jsx';
@@ -25,7 +26,7 @@ const Table = (props) => {
   return (
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
-        <div className={['btb-react-table', props.className].join(' ')} style={getStyle(env.styleObj, ['btb-react-table'])}>
+        <div className={classnames('btb-react-table', props.className)} style={getStyle(env.styleObj, ['btb-react-table'])}>
           <div className="table_container" style={getStyle(env.styleObj, ['table_container'])}>
             {
               (() => {

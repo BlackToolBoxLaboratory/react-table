@@ -10,16 +10,16 @@ const Info = (props) => {
   // const event = useContext(EventContext);
 
   return (
-    <table className="info_table" style={getStyle(env.styleObj, ['info_table'])}>
+    <table className={classnames('info_table', props.className)} style={getStyle(env.styleObj, ['info_table', props.className])}>
       <tbody className="table_body" style={getStyle(env.styleObj, ['table_body'])}>
         {
           env.headData.map((entry_th) => {
             return (
-              <tr className="body_tr" style={getStyle(env.styleObj, ['body_tr'])} key={entry_th.index}>
-                <th className="tr_th" style={getStyle(env.styleObj, ['tr_th'])}>
+              <tr className={classnames('body_tr', `tr-${entry_th.index}`)} style={getStyle(env.styleObj, ['body_tr', `tr-${entry_th.index}`])} key={entry_th.index}>
+                <th className={classnames('tr_th', `th-${entry_th.index}`)} style={getStyle(env.styleObj, ['tr_th', `th-${entry_th.index}`])}>
                   {entry_th.name}
                 </th>
-                <td className="tr_td" style={getStyle(env.styleObj, ['tr_td'])}>
+                <td className={classnames('tr_td', `td-${entry_th.index}`)} style={getStyle(env.styleObj, ['tr_td', `td-${entry_th.index}`])}>
                   {props.dataObj[entry_th.index]}
                 </td>
               </tr>
