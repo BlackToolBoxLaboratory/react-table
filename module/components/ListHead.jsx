@@ -16,10 +16,10 @@ const ListHead = () => {
           (
             <tr className="head_tr" style={getStyle(env.styleObj, ['head_tr'])}>
               {
-                env.headData.map((entry_th) => {
+                env.headData.map((entry_col) => {
                   return (
-                    <th className={classnames('tr_th', `th-${entry_th.index}`)} key={entry_th.index} style={getStyle(env.styleObj, ['tr_th',  `th-${entry_th.index}`])}>
-                      {entry_th.name}
+                    <th className={classnames('tr_th', `th-${entry_col.id}`)} key={entry_col.id} style={getStyle(env.styleObj, ['tr_th',  `th-${entry_col.id}`])}>
+                      {(env.slotObj[`th-${entry_col.id}`])? ((typeof env.slotObj[`th-${entry_col.id}`] == 'function')? env.slotObj[`th-${entry_col.id}`](entry_col) : env.slotObj[`th-${entry_col.id}`]) : (entry_col.name)}
                     </th>
                   );
                 })

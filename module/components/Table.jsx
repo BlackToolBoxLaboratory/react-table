@@ -27,23 +27,21 @@ const Table = (props) => {
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
         <div className={classnames('btb-react-table', props.className)} style={getStyle(env.styleObj, ['btb-react-table'])}>
-          <div className="table_container" style={getStyle(env.styleObj, ['table_container'])}>
-            {
-              (() => {
-                switch (tableMode)
-                {
-                case 'list':
-                  return (
-                    <List/>
-                  );
-                case 'info':
-                  return (
-                    <Info/>
-                  );
-                }
-              })()
-            }
-          </div>
+          {
+            (() => {
+              switch (tableMode)
+              {
+              case 'list':
+                return (
+                  <List/>
+                );
+              case 'info':
+                return (
+                  <Info/>
+                );
+              }
+            })()
+          }
         </div>
       </EventContext.Provider>
     </EnvContext.Provider>

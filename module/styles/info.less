@@ -1,16 +1,15 @@
 .btb-react-table {
-  .container_info {
-    .info_table {
-      width: 100%;
-
-      & + .info_table {
-        margin-top: 0.5rem;
-      }
-    }
+  .table_info {
+    width: 100%;
+    border-collapse: collapse;
 
     .tr_th {
       background: #d3d3d3;
       width: 50%;
     }    
+    
+    & + .table_info {
+      margin-top: 0.5rem;
+    }
   }
 }

@@ -10,7 +10,7 @@ const List = () => {
   const env = useContext(EnvContext);
 
   return (
-    <table className="container_list" style={getStyle(env.styleObj, ['container_list'])}>
+    <table className="table_list" style={getStyle(env.styleObj, ['table_list'])}>
       <ListHead />
       <ListBody />
     </table>

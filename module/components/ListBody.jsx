@@ -12,14 +12,14 @@ const ListBody = () => {
   return (
     <tbody className="list_body" style={getStyle(env.styleObj, ['list_body'])}>
       {
-        env.bodyData.map((entry_tr, index_tr) => {
+        env.bodyData.map((entry_data, index_data) => {
           return (
-            <tr className={classnames('body_tr', `tr-${index_tr}`)} style={getStyle(env.styleObj, ['body_tr', `tr-${index_tr}`])} key={index_tr}>
+            <tr className={classnames('body_tr', `tr-${index_data}`)} style={getStyle(env.styleObj, ['body_tr', `tr-${index_data}`])} key={index_data}>
               {
-                env.headData.map((entry_td) => {
+                env.headData.map((entry_col) => {
                   return (
-                    <td className={classnames('tr_td', `td-${entry_td.index}`)} style={getStyle(env.styleObj, ['tr_td', `td-${entry_td.index}`])} key={entry_td.index}>
-                      {entry_tr[entry_td.index]}
+                    <td className={classnames('tr_td', `td-${entry_col.id}`)} style={getStyle(env.styleObj, ['tr_td', `td-${entry_col.id}`])} key={entry_col.id}>
+                      {(env.slotObj[`td-${entry_col.id}`])? ((typeof env.slotObj[`td-${entry_col.id}`] == 'function')? env.slotObj[`td-${entry_col.id}`](entry_data, entry_col) : env.slotObj[`td-${entry_col.id}`]) : entry_data[entry_col.id]}
                     </td>
                   );
                 })

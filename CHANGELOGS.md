@@ -1,3 +1,9 @@
+## v1.1.0
+
+> Jun, 16, 2020
+
+- **Minor**: Add slot for customized th and td.
+
 ## v1.0.1
 
 > Jun, 13, 2020
