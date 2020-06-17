@@ -1,3 +1,10 @@
+## v1.3.0
+
+> Jun, 18, 2020
+
+- **Minor**: Add compare mode.
+- **Minor**: Enhance styleObj.
+
 ## v1.1.0
 
 > Jun, 16, 2020

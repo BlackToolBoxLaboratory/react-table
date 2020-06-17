@@ -3,15 +3,17 @@ import classnames from 'classnames';
 
 import List from './List.jsx';
 import Info from './Info.jsx';
+import Compare from './Compare.jsx';
 
 import getStyle from '../utils/getStyle.js';
+import formatCamelCase from '../utils/formatCamelCase.js';
 import { EnvContext, EventContext } from '../utils/useContext.js';
 
 const Table = (props) => {
   const env = {
     headData : props.headData || [],
     bodyData : props.bodyData || [],
-    styleObj : props.styleObj || {},
+    styleObj : formatCamelCase(props.styleObj || {}),
     slotObj  : props.slotObj || {}
   };
   const event = {
@@ -22,22 +24,26 @@ const Table = (props) => {
     }
   };
 
-  let tableMode = (props.mode === 'info')? props.mode : 'list';
   return (
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
         <div className={classnames('btb-react-table', props.className)} style={getStyle(env.styleObj, ['btb-react-table'])}>
           {
             (() => {
-              switch (tableMode)
+              switch (props.mode)
               {
-              case 'list':
-                return (
-                  <List/>
-                );
               case 'info':
                 return (
                   <Info/>
+                );
+              case 'compare':
+                return (
+                  <Compare/>
+                );
+              case 'list':
+              default:
+                return (
+                  <List/>
                 );
               }
             })()
