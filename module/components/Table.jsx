@@ -9,7 +9,7 @@ import getStyle from '../utils/getStyle.js';
 import formatCamelCase from '../utils/formatCamelCase.js';
 import { EnvContext, EventContext } from '../utils/useContext.js';
 
-const Table = (props) => {
+const Table = React.forwardRef((props, ref) => {
   const env = {
     headData : props.headData || [],
     bodyData : props.bodyData || [],
@@ -27,7 +27,7 @@ const Table = (props) => {
   return (
     <EnvContext.Provider value={env}>
       <EventContext.Provider value={event}>
-        <div className={classnames('btb-react-table', props.className)} style={getStyle(env.styleObj, ['btb-react-table'])}>
+        <div ref={ref} className={classnames('btb-react-table', props.className)} style={getStyle(env.styleObj, ['btb-react-table'])}>
           {
             (() => {
               switch (props.mode)
@@ -52,6 +52,6 @@ const Table = (props) => {
       </EventContext.Provider>
     </EnvContext.Provider>
   );
-};
+});
 
 export default Table;
