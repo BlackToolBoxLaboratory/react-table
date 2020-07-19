@@ -22,4 +22,4 @@ Please file [issue](https://github.com/BlackToolBoxLaboratory/react-table/issues
 
 # Homepage
 
-You can see the document website [on-line](https://blacktoolboxlaboratory.github.io/react/v2/#/react-table/basic).
+You can see the document website [on-line](https://blacktoolboxlaboratory.github.io/react/v2/#/packages/table/basic).
