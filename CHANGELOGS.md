@@ -1,3 +1,9 @@
+## v1.4.1
+
+> Aug, 21, 2022
+
+- **Issue**: Fix peerDependencies.
+
 ## v1.4.0
 
 > Jun, 21, 2020
